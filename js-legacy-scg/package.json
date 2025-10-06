@@ -1,0 +1,14 @@
+{
+  "name": "@port/streaming-construction-grammar",
+  "main": "9ab13ccf3341b8fb@20186.js",
+  "version": "20186.0.0",
+  "homepage": "https://observablehq.com/@port/streaming-construction-grammar",
+  "author": {
+    "name": "port.studio",
+    "url": "https://observablehq.com/@port"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

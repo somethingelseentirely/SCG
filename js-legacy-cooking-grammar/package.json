@@ -1,0 +1,14 @@
+{
+  "name": "@port/cooking-grammar",
+  "main": "164feec9101a6a10@19855.js",
+  "version": "19855.0.0",
+  "homepage": "https://observablehq.com/@port/cooking-grammar",
+  "author": {
+    "name": "port.studio",
+    "url": "https://observablehq.com/@port"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

@@ -52,33 +52,34 @@ impl SearchSpace {
     }
 
     pub fn add_init_nodes(&mut self, input_triples: TripleIndex) {
-        for init_cxn in self.grammar.init_cxns.values() {
-            let fresh = init_cxn.fresh(&mut self.next_var_id);
+        for triple in input_triples.iter() {
+            for init_cxn in self.grammar.init_cxns.values() {
+                let fresh = init_cxn.fresh(&mut self.next_var_id);
 
-            let mut binding = fresh.binding.clone();
-            for triple in input_triples.iter() {
+                let mut binding = fresh.binding.clone();
+                let mut matched = false;
+                
                 for merge_triple in fresh.merging.iter() {
-                    let mut test_binding = binding.clone();
-                    if test_binding.unify_triple(triple, merge_triple) {
-                        binding = test_binding;
+                    if binding.unify_triple(triple, merge_triple) {
+                        matched = true;
                         break;
                     }
                 }
-            }
 
-            if binding.valid {
-                let node_id = self.next_node_id;
-                self.next_node_id += 1;
+                if matched && binding.valid {
+                    let node_id = self.next_node_id;
+                    self.next_node_id += 1;
 
-                let node = Node {
-                    id: node_id,
-                    cxn_id: fresh.id,
-                    binding,
-                    merging: fresh.merging,
-                    parent_partials: Vec::new(),
-                };
+                    let node = Node {
+                        id: node_id,
+                        cxn_id: fresh.id,
+                        binding,
+                        merging: fresh.merging,
+                        parent_partials: Vec::new(),
+                    };
 
-                self.nodes.insert(node_id, node);
+                    self.nodes.insert(node_id, node);
+                }
             }
         }
     }

@@ -68,10 +68,19 @@ impl Binding {
     pub fn unify_atoms(&mut self, a: Atom, b: Atom) -> bool {
         match (a, b) {
             (Atom::Var(x), Atom::Var(y)) => self.union(x, y),
-            (Atom::Const(c1), Atom::Const(c2)) => c1 == c2,
-            _ => {
-                self.valid = false;
-                false
+            (Atom::Const(c1), Atom::Const(c2)) => {
+                if c1 != c2 {
+                    self.valid = false;
+                    false
+                } else {
+                    true
+                }
+            }
+            (Atom::Var(_x), Atom::Const(_c)) => {
+                true
+            }
+            (Atom::Const(_c), Atom::Var(_x)) => {
+                true
             }
         }
     }

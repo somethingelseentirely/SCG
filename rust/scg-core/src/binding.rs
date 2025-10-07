@@ -76,12 +76,8 @@ impl Binding {
                     true
                 }
             }
-            (Atom::Var(_x), Atom::Const(_c)) => {
-                true
-            }
-            (Atom::Const(_c), Atom::Var(_x)) => {
-                true
-            }
+            (Atom::Var(_x), Atom::Const(_c)) => true,
+            (Atom::Const(_c), Atom::Var(_x)) => true,
         }
     }
 

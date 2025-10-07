@@ -25,11 +25,7 @@ fn test_simple_det_noun_parse() {
                 word_attr,
                 Atom::Const(1001),
             )])
-            .merge(vec![Triple::new(
-                Atom::Var(0),
-                pos_attr,
-                Atom::Const(10),
-            )]),
+            .merge(vec![Triple::new(Atom::Var(0), pos_attr, Atom::Const(10))]),
     );
 
     builder.cxn(
@@ -40,11 +36,7 @@ fn test_simple_det_noun_parse() {
                 word_attr,
                 Atom::Const(2001),
             )])
-            .merge(vec![Triple::new(
-                Atom::Var(0),
-                pos_attr,
-                Atom::Const(20),
-            )]),
+            .merge(vec![Triple::new(Atom::Var(0), pos_attr, Atom::Const(20))]),
     );
 
     builder.cxn(

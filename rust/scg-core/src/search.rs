@@ -58,7 +58,7 @@ impl SearchSpace {
 
                 let mut binding = fresh.binding.clone();
                 let mut matched = false;
-                
+
                 for merge_triple in fresh.merging.iter() {
                     if binding.unify_triple(triple, merge_triple) {
                         matched = true;

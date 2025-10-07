@@ -1,0 +1,13 @@
+[package]
+name = "scg-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+indexmap = "2.1"
+fixedbitset = "0.5"
+smallvec = "1.13"
+petgraph = "0.6"
+anyhow = "1.0"
+thiserror = "1.0"

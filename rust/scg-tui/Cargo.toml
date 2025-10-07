@@ -1,0 +1,11 @@
+[package]
+name = "scg-tui"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+scg-core = { path = "../scg-core" }
+ratatui = "0.28"
+crossterm = "0.28"
+anyhow = "1.0"

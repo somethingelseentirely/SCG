@@ -26,3 +26,7 @@ path = "../examples/simple_parsing.rs"
 [[example]]
 name = "disequality"
 path = "../examples/disequality.rs"
+
+[[example]]
+name = "complete_parsing"
+path = "../examples/complete_parsing.rs"

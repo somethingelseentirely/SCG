@@ -1,0 +1,28 @@
+[package]
+name = "scg-core"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[dev-dependencies]
+
+[features]
+default = []
+# Enable exact ILP solver for covering problems
+ilp-solver = []
+# Enable self-pairing in precomputation
+self-pairing = []
+
+[[example]]
+name = "simple_parsing"
+path = "../examples/simple_parsing.rs"
+
+[[example]]
+name = "disequality"
+path = "../examples/disequality.rs"

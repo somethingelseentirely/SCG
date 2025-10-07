@@ -1,6 +1,25 @@
-[package]
-name = "scg"
-version = "0.1.0"
-edition = "2024"
+[workspace]
+members = ["scg-core", "scg-cli"]
+resolver = "2"
 
-[dependencies]
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["SCG Contributors"]
+license = "MIT OR Apache-2.0"
+
+[workspace.dependencies]
+# Core dependencies
+scg-core = { path = "scg-core" }
+
+# Common dependencies
+thiserror = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# CLI dependencies
+clap = { version = "4.5", features = ["derive"] }
+anyhow = "1.0"
+
+# Optional ILP solver (behind feature flag)
+# good_lp = { version = "1.7", optional = true }

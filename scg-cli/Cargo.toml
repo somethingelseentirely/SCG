@@ -1,0 +1,16 @@
+[package]
+name = "scg-cli"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "scg"
+path = "src/main.rs"
+
+[dependencies]
+scg-core.workspace = true
+clap.workspace = true
+anyhow.workspace = true
+serde_json.workspace = true
